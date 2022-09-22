@@ -15,4 +15,4 @@
         
     - name: print out vlan
       debug:
-        var: ansible_network_resources.vlan
+        var: ansible_network_resources.vlans
