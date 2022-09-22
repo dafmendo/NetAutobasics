@@ -7,8 +7,10 @@
     - name: gather Cisco router facts
       cisco.ios.facts:
 
-    - name: gather Arista router facts
+    - name: retrieve eos facts 
       arista.eos.facts:
+        gather_subset: config
+        gather_network_resources: all
 
     - name: display version
       debug:
