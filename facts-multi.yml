@@ -6,12 +6,7 @@
   tasks:
     - name: gather Cisco router facts
       cisco.ios.facts:
-
-    - name: retrieve eos facts 
-      arista.eos.facts:
-        gather_subset: config
-        gather_network_resources: all
-
+      
     - name: display version
       debug:
         msg: "The OS version is: {{ ansible_net_version }}"
@@ -19,4 +14,15 @@
     - name: display serial number
       debug:
         msg: "The serial number is:{{ ansible_net_serialnum }}"
+        
+    - name: retrieve eos facts 
+      arista.eos.facts:
+        gather_subset: config
+        gather_network_resources: all
+        
+    - name: print out vlans
+      debug:
+        var: ansible_network_resources.vlans
+
+
    
