@@ -15,3 +15,16 @@
     - name: display serial number
       debug:
         msg: "The serial number is:{{ ansible_net_serialnum }}"
+
+    - name: gather Arista router facts
+      arista.eos.facts:
+
+    - name: display version
+      debug:
+        msg: "The EOS version is: {{ ansible_net_version }}"
+      when: ('eos' in ansible_network_os)
+      
+    - name: display serial number
+      debug:
+        msg: "The serial number is:{{ ansible_net_serialnum }}"
+   
