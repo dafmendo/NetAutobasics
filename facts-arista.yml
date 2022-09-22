@@ -9,6 +9,6 @@
         gather_subset: config
         gather_network_resources: all
         
-    - name: print out vlans
+    - name: print out interfaces
       debug:
-        var: ansible_network_resources.vlans
+        var: ansible_network_resources.interfaces
