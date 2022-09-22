@@ -1,0 +1,14 @@
+---
+- name: gather information from routers
+  hosts: arista
+  gather_facts: no
+
+  tasks:
+    - name: retrieve eos facts 
+      arista.eos.facts:
+        gather_subset: config
+        gather_network_resources: all
+        
+    - name: print out vlans
+      debug:
+        var: ansible_network_resources.vlans
