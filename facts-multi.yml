@@ -1,0 +1,17 @@
+---
+- name: gather information from routers
+  hosts: network
+  gather_facts: no
+
+  tasks:
+    - name: gather Cisco router facts
+      cisco.ios.facts:
+
+    - name: display version
+      debug:
+        msg: "The IOS version is: {{ ansible_net_version }}"
+      when: ('ios' in ansible_network_os)
+      
+    - name: display serial number
+      debug:
+        msg: "The serial number is:{{ ansible_net_serialnum }}"
