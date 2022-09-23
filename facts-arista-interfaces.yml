@@ -5,9 +5,9 @@
 
   tasks:
     - name: Retrieve interfaces facts from the device
-      arista.eos.interfaces:
+      arista.eos.vlans:
         state: gathered
-      registered: interfacesfacts
+      registered: vlanfacts
         
 
 
