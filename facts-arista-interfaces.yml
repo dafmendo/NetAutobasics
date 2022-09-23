@@ -7,8 +7,4 @@
     - name: Retrieve interfaces facts from the device
       arista.eos.interfaces:
         state: gathered
-      registered: interfacesfacts
-        
-    - name: print out interfaces
-      debug:
-        var: interfacesfacts
+
