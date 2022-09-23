@@ -1,0 +1,14 @@
+---
+- name: gather information from routers
+  hosts: arista
+  gather_facts: no
+
+  tasks:
+    - name: retrieve eos facts 
+      arista.eos.interfaces:
+        state: gathered
+        registered: interfacesfacts
+        
+    - name: print out interfaces
+      debug:
+        var: ansible_network_resources.interfaces
