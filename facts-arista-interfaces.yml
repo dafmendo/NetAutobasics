@@ -5,12 +5,12 @@
 
   tasks:
     - name: Retrieve interfaces facts from the device
-      arista.eos.vlans:
+      arista.eos.interfaces:
         state: gathered
       
         
     - name: print out interfaces
       debug:
-        var: arista.eos.vlans
+        var: arista.eos.interfaces
 
 
