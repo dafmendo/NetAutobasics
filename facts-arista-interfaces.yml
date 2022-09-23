@@ -7,7 +7,7 @@
     - name: retrieve eos facts 
       arista.eos.interfaces:
         state: gathered
-        registered: interfacesfacts
+      registered: interfacesfacts
         
     - name: print out interfaces
       debug:
