@@ -13,6 +13,6 @@
       debug:
         var: ansible_network_resources.interfaces
         
-    - name: print out vlan
+    - name: print out ospf
       debug:
-        var: ansible_network_resources.vlan
+        var: ansible_network_resources.ospf
