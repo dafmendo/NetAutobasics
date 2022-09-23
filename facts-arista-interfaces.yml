@@ -4,11 +4,11 @@
   gather_facts: no
 
   tasks:
-    - name: retrieve eos facts 
+    - name: Retrieve interfaces facts from the device
       arista.eos.interfaces:
         state: gathered
       registered: interfacesfacts
         
     - name: print out interfaces
       debug:
-        var: ansible_network_resources.interfaces
+        var: interfacesfacts
