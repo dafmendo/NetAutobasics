@@ -6,18 +6,10 @@
   tasks:
     - name: Retrieve eos facts 
       arista.eos.eos_facts:
-        gather_subset: min
-        gather_network_resources: l3_interfaces
+        gather_subset: config
+        gather_network_resources: all
         
     - name: print out interfaces
       debug:
         var: ansible_network_resources.interfaces
         
-    - name: Ensure that the IP address information is accurate.
-      arista.eos.eos_l3_interfaces:
-        config: "{{ ansible_network_resources['l3_interfaces'] }}"
-        register: result
-        
-    - name: Ensure config did not change
-      assert:
-        that: not result.changed
