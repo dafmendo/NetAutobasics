@@ -3,12 +3,11 @@
   hosts: arista
   gather_facts: false
 
-  tasks:
-    - name: Retrieve eos facts 
-      arista.eos.vlans:
-        state: gathered
-        registered: intffacts
+- name: Retrieve eos facts 
+    arista.eos.vlans:
+      state: gathered
+    registered: intffacts
         
-    - name: print out interfaces
-      debug:
-        var: intffacts
+- name: print out interfaces
+    debug:
+      var: intffacts
