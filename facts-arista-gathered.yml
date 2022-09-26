@@ -5,7 +5,7 @@
 
   tasks:
     - name: Retrieve eos facts 
-      arista.eos.interfaces:
+      arista.eos.interface:
         state: gathered
       registered: intffacts
         
