@@ -4,10 +4,10 @@
   gather_facts: false
 
 - name: Retrieve eos facts 
-    arista.eos.vlans:
-      state: gathered
-    registered: intffacts
+  arista.eos.vlans:
+    state: gathered
+  registered: intffacts
         
 - name: print out interfaces
-    debug:
-      var: intffacts
+  debug:
+    var: intffacts
