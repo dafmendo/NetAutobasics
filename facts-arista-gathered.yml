@@ -6,7 +6,7 @@
 - name: Retrieve eos facts 
   arista.eos.vlans:
     state: gathered
-  registered: intffacts
+  register: intffacts
         
 - name: print out interfaces
   debug:
