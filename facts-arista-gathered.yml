@@ -5,10 +5,10 @@
 
   tasks:
     - name: Retrieve eos facts 
-      arista.eos.eos_facts:
-        gather_subset: config
-        gather_network_resources: all
+      arista.eos.interfaces:
+        state: gathered
+      registered: intffacts
         
     - name: print out interfaces
       debug:
-        var: ansible_network_resources.interfaces
+        var: intffacts
