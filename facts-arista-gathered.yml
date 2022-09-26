@@ -9,6 +9,6 @@
         state: gathered
       register: intffacts
         
-    - name: print out interfaces
+    - name: Print out interfaces
       debug:
         var: intffacts
