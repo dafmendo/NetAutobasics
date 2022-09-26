@@ -9,7 +9,7 @@
         gather_subset: config
         gather_network_resources: all
         
-    - name: print out interfaces
+    - name: Print out interfaces
       debug:
         var: ansible_network_resources.interfaces
         
