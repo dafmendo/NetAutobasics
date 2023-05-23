@@ -1,0 +1,23 @@
+- name: Configure SNMP
+  hosts: routers
+  gather_facts: false
+  vars_files: snmp.cfg
+
+  tasks:
+    - name: Use SNMP resource module [Cisco IOS]
+      cisco.ios.ios_snmp_server:
+        state: merged
+        config: "{{ cfg }}"
+      when: ansible_network_os == 'cisco.ios.ios'
+
+    - name: Use SNMP resource module [Cisco NX-OS]
+      cisco.nxos.nxos_snmp_server:
+        state: merged
+        config: "{{ cfg }}"
+      when: ansible_network_os == 'cisco.nxos.nxos'
+
+    - name: Use SNMP resource module [Cisco IOS XR]
+      cisco.iosxr.iosxr_snmp_server:
+        state: merged
+        config: "{{ cfg }}"
+      when: ansible_network_os == 'cisco.iosxr.iosxr'
