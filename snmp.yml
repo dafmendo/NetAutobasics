@@ -8,7 +8,7 @@
       cisco.ios.ios_snmp_server:
         state: merged
         config: "{{ cfg }}"
-      when: ansible_network_os == 'cisco.ios.ios'
+      when: ('ios' in ansible_network_os)
 
     - name: Use SNMP resource module [Cisco NX-OS]
       cisco.nxos.nxos_snmp_server:
