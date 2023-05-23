@@ -20,7 +20,7 @@
       arista.eos.eos_snmp_server:
         state: merged
         config: "{{ cfg }}"
-      when: ansible_network_os == 'arista.eos.eos'
+      when: ('eos' in ansible_network_os)
 
     - name: Use SNMP resource module [Cisco IOS XR]
       cisco.iosxr.iosxr_snmp_server:
